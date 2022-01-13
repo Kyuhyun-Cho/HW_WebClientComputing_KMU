@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>라디오버튼 이미지 출력</title>
+</head>
+
+<body>
+<h3>라디오 버튼을 클릭하면 이미지를 출력합니다.</h3>
+<hr>
+<form>
+	<input type="radio" name="season" value="spring.jpg"">봄
+	<input type="radio" name="season" value="summer.jpg" checked>여름
+	<input type="radio" name="season" value="autumn.jpg">가을
+	<input type="radio" name="season" value="winter.jpg">겨울
+</form>
+<img id = "img" src = "summer.jpg">
+<script>
+	var seasons = document.getElementsByName('season');
+	var seasonImage = document.getElementById("img");
+	for (var i=0; i<seasons.length; i++) {
+		seasons[i].addEventListener("click", function(){
+			var imageSource = this.value;
+			img.src = imageSource;
+		});
+	}
+</script>
+</body>
+</html>

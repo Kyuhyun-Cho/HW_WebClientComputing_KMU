@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head><title>이미지 회전</title></head>
+<style>
+@keyframes spin {
+	100% { transform: rotate(360deg); }
+}
+img { 
+	animation: spin;
+	animation-duration: 1s;
+	animation-iteration-count: infinite;
+}
+</style>
+<h3>팽이 돌리기</h3>
+<hr>
+<body>
+<img src="blade.png" id="spin" width="200" height="200">
+</body>
+</html>

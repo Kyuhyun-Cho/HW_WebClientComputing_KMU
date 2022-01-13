@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>onmouseover과 onmouseout</title>
+<script>
+var text=["빨간자전거를 타고 서울, 대전, 대구, 부산 찍고, 목포, 인천을 거쳐 달린다",
+          "자기계발서 많이 읽기",
+          "매일 매일 연습하기",
+          "자바스크립트 열심히 공부하기"];
+var detailText;
+
+function makeText() {
+	detailText = document.getElementById("detailText");	
+
+	var explain = document.getElementsByTagName("li");
+	for(i=0; i<explain.length; i++) {
+		explain[i].addEventListener("mouseover", over, false);
+		explain[i].addEventListener("mouseout", hideDetailText, false);	
+	}
+}
+
+function over(e) {
+	var n=0;
+	switch(e.target.id) {
+		case "l0": 
+			n = 0; 
+			break;
+		case "l1": 
+			n = 1; 
+			break;
+		case "l2": 
+			n = 2; 
+			break;
+		case "l3": 
+			n = 3;
+			break;
+	}
+	setDetailText(text[n], e);	
+}
+
+function setDetailText(originText, e) {
+	detailText.innerHTML = originText;
+	detailText.style.left = e.clientX + "px";
+	detailText.style.top = e.clientY + "px";
+	detailText.style.visibility = "visible";
+	detailText.style.width = "200px";
+	detailText.style.height = "100px";
+	detailText.style.border = "1px solid yellowgreen";
+	detailText.style.background = "skyblue";
+}
+
+function hideDetailText() {
+	detailText.style.visibility = "hidden";
+}
+
+</script>
+</head>
+<body onload="makeText()">
+<h3>아이템에 마우스를 올리면 설명 출력</h3>
+<hr>
+<p>여름 방학 때 하고 싶은 것들</p>
+<ul>
+	<li id="l0">자전거로 대한민국 일주</li>
+	<li id="l1">책 100권 읽기</li>
+	<li id="l2">철인 3종 경기</li>
+	<li id="l3">자바스크립트</li>
+</ul> 
+<div id="detailText" style="position:absolute"></div>
+</body>
+</html>

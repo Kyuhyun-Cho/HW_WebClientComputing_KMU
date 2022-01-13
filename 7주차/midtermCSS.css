@@ -1,0 +1,28 @@
+body {
+   text-align: center;
+}
+
+table {
+   width:60%;
+   height:100px;
+   margin:auto;
+}
+
+#title {
+   font-weight:bold;
+   font-size:70px;
+}
+
+#content {
+   font-weight:bold;
+   font-size:150%;
+}
+
+#date {
+   font-size: 130%;
+   color: gray;
+}
+
+td, th {
+   height: 50px;
+}

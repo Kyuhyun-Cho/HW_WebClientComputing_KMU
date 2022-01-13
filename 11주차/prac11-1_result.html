@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>현재시각은?</title>
+</head>
+<body>
+	<script>
+		var now = new Date();
+		h = now.getHours();
+		m = now.getMinutes();
+		s = now.getSeconds();
+		if (h >= 12) {
+			document.write("오후 "  + String(h-12) + ":" + m + ":" + s);
+		}
+		else {
+			document.write("오전 " + h + ":" + m+ ":" + s);
+		}
+	</script>
+</body>
+</html>

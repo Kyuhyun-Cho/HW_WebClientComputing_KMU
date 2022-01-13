@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>팝업 창 표시하기</title>
+</head>
+<body>
+	<p>이 문서가 열리면 자동으로 팝업 창이 표시됩니다</p>
+	<script>
+		function openPop() {
+			var newWin = window.open("prac11-1_result.html", "", "width=400, height=400");
+			if (newWin == null) {
+			alert("팝업이 차단되어 있습니다. 팝업 차단을 헤제하고 새로고침 해주세요.");
+			}
+		}
+		window.onload = openPop;
+	</script>
+</body>
+</html>

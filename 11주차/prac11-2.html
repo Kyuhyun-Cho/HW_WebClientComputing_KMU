@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>피자 주문</title>
+</head>
+<body>
+	<h3>피자 주문</h3>
+	<form name="order">
+		<fieldset>
+			<legend>사이즈</legend>
+			Large - 24000원
+		</fieldset>
+		<br>
+		<fieldset>
+			<legend>추가 주문</legend>
+			<input type="checkbox" id="pickle" name="pickle">
+			<label>피클(800원)</label>
+			<input type="checkbox" id="chiliSauce" name="chiliSauce">
+			<label>칠리 소스(300원)</label>
+			<input type="checkbox" id="dippingSauce" name="dippingSauce">
+			<label>디핑 소스(200원)</label>
+			<input type="checkbox" id="cheeseStick" name="cheeseStick">
+			<label>치즈스틱(4개, 4800원)</label>
+			<input type="checkbox" id="cornSalad" name="cornSalad">
+			<label>콘 샐러드(2400원)</label>
+		</fieldset>
+		<br>
+		<fieldset>
+			<legend>합계</legend>
+			<div id="totalPrice" name="totalPrice">
+				24000
+			</div>
+		</fieldset>
+	</form>
+</body>
+<script>
+var price = 24000;
+
+var checkPickle = document.querySelector("#pickle");
+var checkChili = document.querySelector("#chiliSauce");
+var checkDipping = document.querySelector("#dippingSauce");
+var checkCheese = document.querySelector("#cheeseStick");
+var checkCorn = document.querySelector("#cornSalad");
+var totalPrice = document.querySelector("#totalPrice");
+
+checkPickle.addEventListener("click", function() {
+	if(checkPickle.checked == true) {
+		price += 800;
+	}
+	else if(checkPickle.checked == false) {
+		price -= 800;
+	} 
+	totalPrice.innerHTML = price;
+});
+
+checkChili.addEventListener("click", function() {
+	if(checkChili.checked == true) {
+		price += 300;
+	}
+	else if(checkChili.checked == false) {
+		price -= 300;
+	}
+	totalPrice.innerHTML = price;
+});
+
+checkDipping.addEventListener("click", function() {
+	if(checkDipping.checked == true) {
+		price += 200;
+	}
+	else if(checkDipping.checked == false) {
+		price -= 200;
+	}
+	totalPrice.innerHTML = price;
+});
+
+checkCheese.addEventListener("click", function() {
+	if(checkCheese.checked == true) {
+		price += 4800;
+	}
+	else if(checkCheese.checked == false) {
+		price -= 4800;
+	}
+	totalPrice.innerHTML = price;
+});
+
+checkCorn.addEventListener("click", function() {
+	if(checkCorn.checked == true) {
+		price += 2400;
+	}
+	else if(checkCorn.checked == false) {
+		price -= 2400;
+	}
+	totalPrice.innerHTML = price;
+});
+
+</script>
+</html>
